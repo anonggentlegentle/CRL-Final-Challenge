@@ -7,6 +7,9 @@ $color-grey-3: #6f737f;
 $color-white: #ffffff;
 $color-brown: #a59678;
 
+$bp-1: 62.5em; // 1000px
+$bp-2: 43.75em; // 700px
+
 *,
 *::after,
 *::before {
@@ -19,6 +22,10 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   color-scheme: dark light;
+
+  @media only screen and (max-width: $bp-2) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -54,6 +61,11 @@ video {
   justify-content: space-between;
   align-items: center;
 
+  @media only screen and (max-width: $bp-2) {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
   &__list {
     list-style: none;
 
@@ -64,6 +76,10 @@ video {
     &--primary {
       margin-left: auto;
       margin-right: 8rem;
+
+      @media only screen and (max-width: $bp-2) {
+        margin: 0;
+      }
     }
   }
 
@@ -97,10 +113,19 @@ video {
 
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: $bp-2) {
+      flex-direction: column;
+    }
   }
 
   &__heading {
     width: 50%;
+
+    @media only screen and (max-width: $bp-2) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__span {
@@ -114,6 +139,11 @@ video {
     font-family: $font-1;
 
     align-self: flex-end;
+
+    @media only screen and (max-width: $bp-2) {
+      width: 100%;
+      align-self: flex-start;
+    }
   }
 
   &__p {
@@ -139,8 +169,205 @@ video {
   }
 }
 
+.content-1 {
+  background-color: rgba($color-brown, 0.1);
+  padding: 8rem 0;
+  color: $color-grey-3;
+
+  &__row {
+    text-align: center;
+
+    display: flex;
+    column-gap: 6rem;
+
+    @media only screen and (max-width: $bp-2) {
+      flex-direction: column;
+      row-gap: 2rem;
+      align-items: center;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    @media only screen and (max-width: $bp-2) {
+      width: 70%;
+    }
+  }
+
+  &__text {
+    font-family: $font-1;
+    font-size: 1.8rem;
+    line-height: 1.7;
+  }
+}
+
+.content-2 {
+  background-color: $color-white;
+  padding: 10rem 0;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    row-gap: 0;
+
+    @media only screen and (max-width: $bp-1) {
+      flex-direction: column;
+      row-gap: 4rem;
+    }
+  }
+
+  &__left {
+    width: 62%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    @media only screen and (max-width: $bp-1) {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 32%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    @media only screen and (max-width: $bp-1) {
+      width: 100%;
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-2) {
+      width: 100%;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+  }
+
+  &__text {
+    font-family: $font-1;
+    line-height: 1.5;
+    font-size: 2.1rem;
+    color: $color-grey-3;
+
+    &--right {
+      color: $color-white;
+      font-size: 1.8rem;
+    }
+  }
+
+  &__col {
+    background-color: $color-grey-2;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .heading-2 {
+      color: $color-white;
+    }
+  }
+}
+
+.footer {
+  background-color: $color-grey-2;
+  padding: 8rem 0;
+
+  .heading-1 {
+    font-size: 6rem;
+    text-align: center;
+  }
+
+  &__content-box {
+    margin-top: 6rem;
+    font-size: 1.6rem;
+    font-family: $font-1;
+    color: $color-grey-3;
+
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-2) {
+      flex-direction: column;
+      row-gap: 1rem;
+      align-items: center;
+    }
+  }
+
+  &__content-1 {
+    width: 40%;
+  }
+
+  &__p {
+    line-height: 1.7;
+
+    @media only screen and (max-width: $bp-2) {
+      text-align: center;
+    }
+  }
+
+  &__content-2,
+  &__content-3,
+  &__content-4 {
+    width: max-content;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-2) {
+      align-items: center;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+    color: $color-grey-3;
+    transition: opacity 0.2s;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    opacity: 0.65;
+  }
+}
+
 .heading-1 {
   font-size: 9rem;
   color: $color-white;
   line-height: 1;
+}
+
+.heading-2 {
+  font-size: 3rem;
+  color: $color-brown;
+}
+
+.heading-3 {
+  font-size: 2.1rem;
+  font-family: $font-2;
+  color: $color-brown;
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: $bp-2) {
+    text-align: center;
+  }
 }
