@@ -1,0 +1,146 @@
+$font-1: "Montserrat", sans-serif;
+$font-2: "Oswald", sans-serif;
+
+$color-grey-1: #2e323f;
+$color-grey-2: #3b4050;
+$color-grey-3: #6f737f;
+$color-white: #ffffff;
+$color-brown: #a59678;
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  font-family: $font-2;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: $color-grey-1;
+}
+
+.nav {
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    column-gap: 6rem;
+    align-items: center;
+
+    &--primary {
+      margin-left: auto;
+      margin-right: 8rem;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: $color-white;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &__link:hover {
+    opacity: 0.65;
+  }
+
+  &__link--btn:link,
+  &__link--btn:visited {
+    background-color: $color-brown;
+    padding: 0.5rem 1.5rem;
+    border-radius: 100rem;
+    transition: all 0.2s;
+  }
+}
+
+.hero {
+  background-color: $color-grey-2;
+
+  &__row {
+    padding: 10rem 0;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    width: 50%;
+  }
+
+  &__span {
+    color: $color-brown;
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    width: 45%;
+    color: $color-white;
+    font-family: $font-1;
+
+    align-self: flex-end;
+  }
+
+  &__p {
+    line-height: 1.5;
+  }
+
+  &__btn:link,
+  &__btn:visited {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 0.5rem 3.5rem;
+    text-transform: uppercase;
+    font-family: $font-2;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-brown;
+    border-radius: 100rem;
+    transition: all 0.2s;
+  }
+
+  &__btn:hover {
+    opacity: 0.65;
+  }
+}
+
+.heading-1 {
+  font-size: 9rem;
+  color: $color-white;
+  line-height: 1;
+}
